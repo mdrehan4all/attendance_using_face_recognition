@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="View Attendance"
+        android:id="@+id/item_viewattendance"/>
+    <item android:title="View Details"
+        android:id="@+id/item_viewdetails"/>
+    <item android:title="Update Details"
+        android:id="@+id/item_editdetails"/>
+    <item android:title="Images"
+        android:id="@+id/item_images"/>
+</menu>

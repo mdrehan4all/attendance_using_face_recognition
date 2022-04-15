@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+	<title>Face Recognition</title>
+<style>
+#body{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image:url(static/img/bg.jpg);
+  margin: 5px 5px;
+}
+#page{
+  margin: 0px auto;
+  padding: 20px 20px;
+  display: block;
+  //text-align: center;
+  max-width:600px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #aaaaaa;
+  background-color:rgba(0,0,0, 0.3);
+  //background-image:url(static/img/bg.jpg);
+}
+#loginform{
+  display: block;
+  margin: 0px auto;
+  padding: 10px;
+  width:100%;
+  box-sizing : border-box;
+  //text-align: center;
+}
+#loginform input[type="text"],#loginform input[type="password"],#loginform input[type="file"]{
+  width:100%;
+  margin: 5px auto;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border:none;
+  //border: 1px double #1A050E;
+  box-sizing : border-box;
+  box-shadow: 0 0 5px #aaaaaa;
+}
+#loginform input[type="submit"]{
+  margin: 0px auto;
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  width:100%;
+  text-align:center;
+  border: none;
+  border-radius: 5px;
+  color:#ffffff;
+  background-color: rgba(10,5,15,0.3);
+  box-shadow: 0 0 5px #aaaaaa;
+}
+#loginform label{
+  color:#ffffff;
+}
+.btn {
+  margin: 0px auto;
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  width:100%;
+  text-align:center;
+  border: none;
+  border-radius: 5px;
+  color:#ffffff;
+  background-color: rgba(10,5,15,0.3);
+  box-sizing : border-box;
+  box-shadow: 0 0 5px #aaaaaa;
+  text-decoration:none;
+}
+.btn:hover{
+  background-color: rgba(255,255,255,0.3);
+}
+</style>
+</head>
+<body id="body">
+  <div id="page">
+    <h1 style="color:#ffffff;text-align:center">Update Student</h1>
+    <div id="loginform">
+
+    {% for row in data %}
+    <form action="updatestudentformsubmit" method="POST" enctype = "multipart/form-data">
+    <input type="text" placeholder="ID" name="id" value="{{ id }}" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="3" required readonly/>
+    <label>Name</label><br/>
+    <input type="text" placeholder="Name" name="name" value="{{ row[1] }}" oninput="this.value = this.value.replace(/[^A-Z a-z]/g, '').replace(/(\..*)\./g, '$1');" maxlength="30" required/>
+    <label>Roll no.</label><br/>
+    <input type="text" placeholder="Roll no." name="rollno" value="{{ row[2] }}" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="3" required/>
+    <label>Semester</label><br/>
+    <input type="text" placeholder="Semester" name="semester" value="{{ row[3] }}" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" maxlength="30" required/>
+    <label>Course</label><br/>
+    <input type="text" placeholder="Course" name="course" value="{{ row[4] }}" oninput="this.value = this.value.replace(/[^A-Za-z0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="20" required/>
+    <script>
+      function cs(s){
+        if(s.length >= 5 && s.charAt(4) != '-'){
+          document.getElementById("btnsubmit").value = "Invalid Session";
+          document.getElementById("btnsubmit").disabled = true;
+          document.getElementById("btnsubmit").style.backgroundColor = "red";
+        }else if(s.length < 9){
+          document.getElementById("btnsubmit").value = "Invalid Session";
+          document.getElementById("btnsubmit").disabled = true;
+          document.getElementById("btnsubmit").style.backgroundColor = "red";
+        }else if(s.charAt(0) == '-' || s.charAt(1) == '-' || s.charAt(2) == '-' || s.charAt(3) == '-' || s.charAt(5) == '-' || s.charAt(6) == '-' || s.charAt(7) == '-' || s.charAt(8) == '-'){
+          document.getElementById("btnsubmit").value = "Invalid Session";
+          document.getElementById("btnsubmit").disabled = true;
+          document.getElementById("btnsubmit").style.backgroundColor = "red";
+        }else if(parseInt(s.substring(0,5)) >=  parseInt(s.substring(5,9))){
+          document.getElementById("btnsubmit").value = "Invalid Session";
+          document.getElementById("btnsubmit").disabled = true;
+          document.getElementById("btnsubmit").style.backgroundColor = "red";
+        }else{
+          document.getElementById("btnsubmit").value = "Update Details";
+          document.getElementById("btnsubmit").disabled = false;
+          document.getElementById("btnsubmit").style.backgroundColor = "rgba(0,0,0,0.3)";
+        }
+      }
+    </script>
+        <label>Session (YYYY-YYYY)</label><br/>
+    <input id="session" type="text" placeholder="YYYY-YYYY" name="session" value="{{ row[5] }}" oninput="this.value = this.value.replace(/[^0-9-]/g, '').replace(/(\..*)\./g, '$1');cs(this.value);" maxlength="9" required/>
+    <input id="btnsubmit" type="submit" value="Update Details"/>
+    </form>
+    {% endfor %}
+      <br/><br/>
+    
+    <a href="searchstudentform" class="btn">Back to Search</a>
+    <a href="adminpanel" class="btn">Back to AdminPanel</a>
+    </div>
+  </div>	
+</body>
+</html>

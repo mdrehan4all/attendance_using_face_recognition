@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#661A050E">
+    <ImageView
+        android:id="@+id/ivusersrow_icon"
+        android:layout_width="20dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="5dp"
+        app:srcCompat="@mipmap/ic_launcher_round"
+        android:visibility="invisible"/>
+    <TextView
+        android:id="@+id/tvusersrow_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvusersrow_id"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/ivusersrow_icon"
+        android:layout_toRightOf="@+id/ivusersrow_icon"
+        android:gravity="center_vertical"
+        android:text="Name"
+        android:textColor="#ffffff"
+        android:textSize="22sp" />
+    <TextView
+        android:id="@+id/tvusersrow_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ivusersrow_icon"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/ivusersrow_icon"
+        android:layout_toRightOf="@+id/ivusersrow_icon"
+        android:gravity="center_vertical"
+        android:textColor="#eeeeee"
+        android:text="ID" />
+</RelativeLayout>

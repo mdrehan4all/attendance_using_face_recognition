@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+<head>
+	<title>Face Recognition</title>
+<style>
+#body{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image:url(static/img/bg.jpg);
+  margin: 5px 5px;
+}
+#page{
+  margin: 0px auto;
+  padding: 20px 20px;
+  display: block;
+  //text-align: center;
+  max-width:600px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #aaaaaa;
+  background-color:rgba(0,0,0, 0.3);
+  //background-image:url(static/img/bg.jpg);
+}
+#loginform{
+  display: block;
+  margin: 0px auto;
+  padding: 10px;
+  width:100%;
+  box-sizing : border-box;
+  //text-align: center;
+}
+#loginform input[type="text"],#loginform input[type="password"],#loginform input[type="file"]{
+  width:100%;
+  margin: 5px auto;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border:none;
+  //border: 1px double #1A050E;
+  box-sizing : border-box;
+  box-shadow: 0 0 5px #aaaaaa;
+}
+#loginform input[type="submit"]{
+  margin: 0px auto;
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  width:100%;
+  text-align:center;
+  border: none;
+  border-radius: 5px;
+  color:#ffffff;
+  background-color: rgba(10,5,15,0.3);
+  box-shadow: 0 0 5px #aaaaaa;
+}
+#loginform label{
+  color:#ffffff;
+}
+.btn {
+  margin: 0px auto;
+  display: block;
+  font-size: 18px;
+  padding: 10px;
+  width:100%;
+  text-align:center;
+  border: none;
+  border-radius: 5px;
+  color:#ffffff;
+  background-color: rgba(10,5,15,0.3);
+  box-sizing : border-box;
+  box-shadow: 0 0 5px #aaaaaa;
+  text-decoration:none;
+}
+.btn:hover{
+  background-color: rgba(255,255,255,0.3);
+}
+</style>
+</head>
+<body id="body">
+  <div id="page">
+    <h1 style="color:#ffffff;text-align:center">View Image</h1>
+    <div id="loginform">
+      {% for file in files %}
+        <img style="width:200px" src="/static/train/{{ id }}/{{ file }}"/><br/>
+        <a href="deleteimage?id={{ id }}&file={{ file }}"><button>Delete</button></a><br/>
+      {% endfor %}
+    <br/><br/>
+    <a href="searchstudentform" class="btn">Back</a>
+    </div>
+  </div>	
+</body>
+</html>

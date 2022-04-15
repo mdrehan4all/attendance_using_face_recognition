@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.ac.iitp.facedetection.Images"
+    android:background="#991A050E">
+    <ImageView
+        android:id="@+id/ivmainbg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@mipmap/bg"
+        android:scaleType="centerCrop"
+        />
+    <ImageView
+        android:id="@+id/iv_images_addnew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@mipmap/camera" />
+    <TextView
+        android:id="@+id/tv_images_addnew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_images_addnew"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/iv_images_addnew"
+        android:layout_toRightOf="@+id/iv_images_addnew"
+        android:gravity="center_vertical"
+        android:textColor="#ffffff"
+        android:text="Add New Image" />
+    <ListView
+        android:id="@+id/lv_images"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/iv_images_addnew" />
+
+    <LinearLayout
+        android:id="@+id/llimages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:layout_below="@+id/iv_images_addnew"
+        android:layout_margin="20dp"
+        android:background="#331A050E"
+        >
+        <ImageView
+            android:id="@+id/iv_images_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@mipmap/ic_avtar"/>
+        <Button
+            android:id="@+id/btn_images_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#991A050E"
+            android:textColor="#ffffff"
+            android:layout_margin="10dp"
+            android:text="Upload"/>
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/pb_images_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/tv_images_train"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lv_images"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:text="Train Now"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+</RelativeLayout>

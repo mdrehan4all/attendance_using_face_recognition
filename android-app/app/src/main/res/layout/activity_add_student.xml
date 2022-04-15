@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.ac.iitp.facedetection.AddStudent"
+    android:focusableInTouchMode="true">
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@mipmap/bg"
+        android:scaleType="centerCrop"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#661A050E"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Student"
+                android:textColor="#99ffffff"
+                android:gravity="center"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/edasname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Enter Name"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ."/>
+
+            <EditText
+                android:id="@+id/edasroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Roll no."
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:digits="0123456789"/>
+
+            <EditText
+                android:id="@+id/edassemester"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Semester"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:digits="0123456789"/>
+
+            <EditText
+                android:id="@+id/edascourse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Course"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789."/>
+
+            <EditText
+                android:id="@+id/edassession"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Session ex. 2016-2019"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:digits="0123456789-"
+                android:maxLength="9"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/pbasloading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnasadd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:textColor="#ffffff"
+                android:background="#661A050E"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

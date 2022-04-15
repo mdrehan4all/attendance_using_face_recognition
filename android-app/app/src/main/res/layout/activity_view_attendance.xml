@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="in.ac.iitp.facedetection.ViewAttendance"
+    android:focusableInTouchMode="true">
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@mipmap/bg"
+        android:scaleType="centerCrop"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout2"
+        android:background="#661A050E">
+        <TextView
+            android:id="@+id/tv_viewattendance_totalattended"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Attendance"
+            android:textStyle="bold"
+            android:textColor="#99ffffff"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="0dp"
+            android:padding="10dp"
+            android:background="#661A050E">
+            <EditText
+                android:id="@+id/ed_viewattendance_fromdate"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:hint="Start Date"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:inputType="date"/>
+            <EditText
+                android:id="@+id/ed_viewattendance_todate"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:hint="End Date"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:inputType="date"/>
+            <Button
+                android:id="@+id/btn_viewattendance_view"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="View"
+                android:layout_weight="1"
+                android:background="#661A050E"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview_viewattendance"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout2" />
+
+</RelativeLayout>
